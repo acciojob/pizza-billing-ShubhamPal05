@@ -8,19 +8,17 @@ public class Pizza {
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
+        this.price=0;
         // your code goes here
+        if(isVeg){
+            this.price+=300;
+        }
+        else{
+            this.price+=400;
+        }
     }
 
     public int getPrice(){
-
-        if(isVeg){
-            this.price=300;
-            // this.bill+="Base Price Of The Pizza: 300\n";
-        }
-        else{
-            this.price=400;
-        }
-        
         return this.price;
     }
 
@@ -29,7 +27,6 @@ public class Pizza {
 
         if(!ExtracheeseAdded){
             this.price+=80;
-            // this.bill+="Extra Cheese Added: 80\n";
         }
         ExtracheeseAdded=true;
     }
@@ -39,11 +36,9 @@ public class Pizza {
         if(!ToppingsAdded){
             if(isVeg){
                 this.price+=70;
-                // this.bill+="Extra Toppings Added: 70\n";
             }
             else{
                 this.price+=120;
-                // this.bill+="Extra Toppings Added: 120\n";
             }
         }
         ToppingsAdded=true;
@@ -52,20 +47,20 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         this.price+=20;
-        this.bill+="Paperbag Added: 20\n";
         TakeAwayAdded=true;
     }
 
     public String getBill(){
         // your code goes here
+        this.bill="";
         if(isVeg){
-            this.bill+=this.bill+="Base Price Of The Pizza: 300\n";
+            this.bill+="Base Price Of The Pizza: 300\n";
         }
         else{
-            this.bill+=this.bill+="Base Price Of The Pizza: 400\n";
+            this.bill+="Base Price Of The Pizza: 400\n";
         }
         if(ExtracheeseAdded){
-            this.bill+=this.bill+="Extra Cheese Added: 80\n";
+            this.bill+="Extra Cheese Added: 80\n";
         }
         if(ToppingsAdded){
             if(isVeg){
@@ -74,6 +69,9 @@ public class Pizza {
             else{
                 this.bill+="Extra Toppings Added: 120\n";
             }
+        }
+        if(TakeAwayAdded){
+            this.bill+="Paperbag Added: 20\n";
         }
         this.bill+="Total Price: "+price+"\n";
 
