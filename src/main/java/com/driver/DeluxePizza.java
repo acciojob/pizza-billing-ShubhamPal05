@@ -1,4 +1,4 @@
-package com.driver;
+//package com.driver;
 
 public class DeluxePizza extends Pizza {
 
@@ -6,8 +6,8 @@ public class DeluxePizza extends Pizza {
         super(isVeg);
         // your code goes here
         addExtraCheese();
-        this.ExtracheeseAdded=false;
+        // this.ExtracheeseAdded=false;
         addExtraToppings();
-        this.ToppingsAdded=false;
+        // this.ToppingsAdded=false;
     }
 }

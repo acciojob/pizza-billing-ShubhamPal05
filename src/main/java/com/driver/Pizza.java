@@ -1,4 +1,4 @@
-package com.driver;
+//package com.driver;
 
 public class Pizza {
     boolean ToppingsAdded=false, ExtracheeseAdded=false, TakeAwayAdded=false;
@@ -46,7 +46,8 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here
-        this.price+=20;
+        if(!TakeAwayAdded)
+            this.price+=20;
         TakeAwayAdded=true;
     }
 
